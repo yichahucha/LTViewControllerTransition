@@ -11,6 +11,7 @@ import UIKit
 
 extension UIViewController {
     
+    //key
     private struct AssociaKey{
         static var kInteractiveTransitionKey = "kInteractiveTransitionKey"
         static var kAnimationManagerKey = "kAnimationManagerKey"
