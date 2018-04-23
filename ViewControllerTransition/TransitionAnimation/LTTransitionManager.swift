@@ -27,8 +27,9 @@ class LTTransitionManager: NSObject, UINavigationControllerDelegate, UIViewContr
     //退场动画
     var backTransitionAnimation: LTTransitionAnimation {
         let animation = LTTransitionAnimation(duration: duration)
-        animation.animationBlock = {(transitionContext:UIViewControllerContextTransitioning) -> Void in
-            self.backAnimation(contextTransition: transitionContext)
+        animation.animationBlock =
+            {(transitionContext:UIViewControllerContextTransitioning) -> Void in
+                self.backAnimation(contextTransition: transitionContext)
         }
         return animation
     }

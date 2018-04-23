@@ -26,14 +26,15 @@ extension UIViewController {
             objc_setAssociatedObject(self, &AssociaKey.kInteractiveTransitionKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-
+    
     //自定义动画转场 push
     func lt_pushViewControler(viewController: UIViewController, transitionManager: LTTransitionManager) {
         if navigationController != nil {
-            
-            UIViewController.initializeMethod()
-            objc_setAssociatedObject(viewController, &AssociaKey.kAnimationManagerKey, transitionManager, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            //这里设置导航控制器的delegate，每次push的时候，导航控制器delegate指向新的控制器。当pop的时候，控制器消失，导航控制器的delegate就会变为nil，自定义的pop动画就会变成系统动画（delegate为nil，默认使用系统动画），所以pop的时候需要重新设置代理。
             navigationController?.delegate = transitionManager
+            UIViewController.initializeMethod()
+            
+            objc_setAssociatedObject(viewController, &AssociaKey.kAnimationManagerKey, transitionManager, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             if interactiveTransition != nil {
                 transitionManager.toInteractiveTransition = interactiveTransition
             }
@@ -70,7 +71,6 @@ extension UIViewController {
         }
     }
     
-    //导航控制器的代理每次都会指向最后一个控制器，当最后一个控制器消失，导航控制器delegate就会变为nil，默认使用系统动画，所以在这里每次重新设置一下代理
     @objc func lt_viewDidAppear(animated: Bool) {
         let animator = objc_getAssociatedObject(self, &AssociaKey.kAnimationManagerKey) as? LTTransitionManager
         if let an = animator {
