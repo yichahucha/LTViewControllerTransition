@@ -38,7 +38,7 @@ func lt_registerBackInteractiveTransition(direction: LTEdgePanGestureDirection, 
 }
 ```
 
-具体详见demo...
+具体详见 demo...
 
 ## 演示
 ![](https://raw.githubusercontent.com/yichahucha/LTViewControllerTransition/master/2018-05-03%2010_55_51.gif)
