@@ -22,13 +22,16 @@ func backAnimation(contextTransition:UIViewControllerContextTransitioning) {
 ```Objective-C
 //动画转场 push
 internal func lt_pushViewControler(viewController: UIViewController, transitionManager: LTTransitionManager)
-
+```
+```Objective-C
 //动画转场 present
 internal func lt_presentViewControler(viewController: UIViewController, transitionManager: LTTransitionManager)
-
+```
+```Objective-C
 //注册手势入场动画
 internal func lt_registerToInteractiveTransition(direction: LTEdgePanGestureDirection, eventBlcok: @escaping (() -> Void))
-
+```
+```Objective-C
 //注册手势退场动画
 internal func lt_registerBackInteractiveTransition(direction: LTEdgePanGestureDirection, eventBlcok: @escaping (() -> Void))
 ```
