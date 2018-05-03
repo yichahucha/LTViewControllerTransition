@@ -18,7 +18,7 @@ func backAnimation(contextTransition:UIViewControllerContextTransitioning) {
 ```
 
 
-使用 ViewController 的分类 `LTTransition` 提供的方法，进行 push、present，传入自定义的动画类
+使用 ViewController 的分类 `LTTransition` 提供的方法如下，进行 push、present，传入自定义的动画类
 ```Objective-C
 //自定义动画转场 push
 func lt_pushViewControler(viewController: UIViewController, transitionManager: LTTransitionManager) {
