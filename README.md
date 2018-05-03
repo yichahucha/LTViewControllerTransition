@@ -1,7 +1,7 @@
 # LTViewControllerTransition
 
-自定义转场动画，支持手势返回，与系统动画不冲突，使用简单
+自定义转场动画，支持手势返回，与系统动画、手势不冲突，使用简单
 
-![](转场.gif)
+![](https://raw.githubusercontent.com/yichahucha/LTViewControllerTransition/master/2018-05-03%2010_47_26.gif)
 
 
