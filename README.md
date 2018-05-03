@@ -18,24 +18,16 @@ func backAnimation(contextTransition:UIViewControllerContextTransitioning) {
 ```
 
 
-使用 ViewController 的分类 `LTTransition` 提供的方法如下，进行 push、present，传入自定义的动画类
+使用 ViewController 的分类 `LTTransition` 提供的方法，进行 push、present，传入自定义的动画类
 ```Objective-C
 //自定义动画转场 push
-func lt_pushViewControler(viewController: UIViewController, transitionManager: LTTransitionManager) {
-        ...
-}
+internal func lt_pushViewControler(viewController: UIViewController, transitionManager: LTTransitionManager)
 //自定义动画转场 present
-func lt_pushViewControler(viewController: UIViewController, transitionManager: LTTransitionManager) {
-        ...
-}
+internal func lt_presentViewControler(viewController: UIViewController, transitionManager: LTTransitionManager)
 //注册手势入场动画
-func lt_registerToInteractiveTransition(direction: LTEdgePanGestureDirection, eventBlcok:@escaping (()->Void)) {
-        ...
-}
+internal func lt_registerToInteractiveTransition(direction: LTEdgePanGestureDirection, eventBlcok: @escaping (() -> Void))
 //注册手势退场动画
-func lt_registerBackInteractiveTransition(direction: LTEdgePanGestureDirection, eventBlcok:@escaping (()->Void)) { 
-        ....
-}
+internal func lt_registerBackInteractiveTransition(direction: LTEdgePanGestureDirection, eventBlcok: @escaping (() -> Void))
 ```
 
 具体详见 demo...
