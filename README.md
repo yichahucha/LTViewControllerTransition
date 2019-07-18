@@ -2,7 +2,7 @@
 
 ## 介绍
 1.自定义转场动画，支持手势返回，与系统动画、手势不冲突，使用简单  
-2.支持push、present
+2.支持Push、Present
 
 ## 使用
 新建继承自 `LTTransitionManager` 动画类，重新这两个方法，实现动画：
@@ -35,10 +35,5 @@ internal func lt_registerToInteractiveTransition(direction: LTEdgePanGestureDire
 //注册手势退场动画
 internal func lt_registerBackInteractiveTransition(direction: LTEdgePanGestureDirection, eventBlcok: @escaping (() -> Void))
 ```
-
-具体详见 demo...
-
-## 演示
-![](https://raw.githubusercontent.com/yichahucha/LTViewControllerTransition/master/2018-05-03%2010_55_51.gif)
 
 
